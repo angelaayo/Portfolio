@@ -33,14 +33,3 @@ python3 -m http.server
 # then visit http://localhost:8000
 ```
 
-## Deploy
-
-Any static host works (GitHub Pages, Netlify, Vercel). Nothing to build —
-point the host at this folder.
-
-## To do
-
-- [ ] Replace placeholder name, blurb, and links
-- [ ] Add the three real projects (with screenshots + live/repo links)
-- [ ] Fill in the experience entry
-- [ ] Update the skills list
