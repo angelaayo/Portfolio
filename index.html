@@ -1,126 +1,281 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>
-  /* set theme before paint to avoid a flash */
-  (function(){var t;try{t=localStorage.getItem('pf-theme');}catch(e){}
-    if(t!=='light'&&t!=='dark'){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';}
-    document.documentElement.setAttribute('data-theme',t);})();
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<div class="flipper" id="flipper" aria-hidden="true"></div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Portfolio</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <script>
+      /* set theme before paint to avoid a flash */
+      (function () {
+        var t;
+        try {
+          t = localStorage.getItem("pf-theme");
+        } catch (e) {}
+        if (t !== "light" && t !== "dark") {
+          t =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="flipper" id="flipper" aria-hidden="true"></div>
 
-<header class="hero" id="hero">
-  <svg class="tess" id="tess" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
-  <svg class="scene" id="scene" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
-  <div class="heroShade"></div>
+    <header class="hero" id="hero">
+      <svg
+        class="tess"
+        id="tess"
+        viewBox="0 0 1440 900"
+        preserveAspectRatio="xMidYMid slice"
+        aria-hidden="true"
+      ></svg>
+      <svg
+        class="scene"
+        id="scene"
+        viewBox="0 0 1440 900"
+        preserveAspectRatio="xMidYMax slice"
+        aria-hidden="true"
+      ></svg>
+      <div class="heroShade"></div>
 
-  <nav aria-label="Main">
-    <a class="brand" href="#hero">Your Name</a>
-    <div class="links">
-      <a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a>
-      <button class="totem" id="totem" aria-label="Switch theme">
-        <svg viewBox="0 0 32 32" aria-hidden="true">
-          <ellipse class="t-sh" cx="16" cy="27" rx="7" ry="2"/>
-          <path class="t-stem" d="M16 4 L16 9"/>
-          <path class="t-body" d="M7 12 Q16 8 25 12 L16 27 Z"/>
-          <path class="t-edge" d="M7 12 Q16 8 25 12 L16 27 Z"/>
-          <path class="t-edge" d="M7 12 Q16 16 25 12"/>
-        </svg>
-        <span class="tip" id="tip" role="status">Flip the world.</span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="intro">
-    <p class="kicker">front-end developer <span class="mt mono" id="mt">t+00:00</span></p>
-    <h1>I build web apps that pull people in.</h1>
-    <p class="lede">Interfaces with real craft behind them: fast, accessible, and a little more interesting than they had to be.</p>
-    <div class="cta">
-      <a class="btn" href="#work">See my work</a>
-      <a class="btn ghost" href="#contact">Get in touch</a>
-    </div>
-  </div>
-
-  <div class="thread" aria-hidden="true"><span class="tick"></span></div>
-  <div class="morse" aria-hidden="true">
-    <i class="d"></i><i class="d"></i><i class="d"></i><i class="l"></i><i class="d"></i><i class="l"></i><i class="l"></i>
-    <small class="mono">S T A Y</small>
-  </div>
-</header>
-
-<main>
-  <section class="work sec" id="work" aria-labelledby="work-h">
-    <p class="eyebrow">01 — Work</p>
-    <h2 id="work-h">Selected work</h2>
-    <p class="sub">Three things I've built. Each opens into a case study with a live demo and the source; your real screenshots will sit where the panels are.</p>
-    <div class="grid">
-      <a class="vol" href="#work"><div class="photo">screenshot of the live app</div><h3>Project One</h3><p>One line on what it does and who it's for.</p><div class="tags"><span>React</span><span>TypeScript</span></div></a>
-      <a class="vol" href="#work"><div class="photo">screenshot of the live app</div><h3>Project Two</h3><p>One line on what it does and who it's for.</p><div class="tags"><span>Next.js</span><span>Postgres</span></div></a>
-      <a class="vol" href="#work"><div class="photo">screenshot of the live app</div><h3>Project Three</h3><p>One line on what it does and who it's for.</p><div class="tags"><span>Node</span><span>WebSockets</span></div></a>
-    </div>
-  </section>
-
-  <section class="exp sec" id="experience" aria-labelledby="exp-h">
-    <p class="eyebrow">02 — Experience</p>
-    <h2 id="exp-h">Experience</h2>
-    <ol class="timeline">
-      <li class="exp-item">
-        <div class="exp-when">2023 — Present</div>
-        <div class="exp-body">
-          <h3 class="exp-role">Job Title</h3>
-          <p class="exp-co">Company · Location</p>
-          <p class="exp-desc">One or two sentences on what you did and the impact you had — the kind of work, the stack, and a result you're proud of. Swap in the real details whenever you're ready, and we can add more entries above this one as your experience grows.</p>
+      <nav aria-label="Main">
+        <a class="brand" href="#hero">Angela Ayodeji</a>
+        <div class="links">
+          <a href="#work">Work</a><a href="#experience">Experience</a
+          ><a href="#about">About</a><a href="#contact">Contact</a>
+          <button class="totem" id="totem" aria-label="Switch theme">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <ellipse class="t-sh" cx="16" cy="27" rx="7" ry="2" />
+              <path class="t-stem" d="M16 4 L16 9" />
+              <path class="t-body" d="M7 12 Q16 8 25 12 L16 27 Z" />
+              <path class="t-edge" d="M7 12 Q16 8 25 12 L16 27 Z" />
+              <path class="t-edge" d="M7 12 Q16 16 25 12" />
+            </svg>
+            <span class="tip" id="tip" role="status">Flip the world.</span>
+          </button>
         </div>
-      </li>
-    </ol>
-  </section>
+      </nav>
 
-  <section class="about sec" id="about" aria-labelledby="about-h">
-    <div class="about-grid">
-      <div class="about-copy">
-        <p class="eyebrow">03 — About</p>
-        <h2 id="about-h">A bit about me</h2>
-        <p class="blurb">I'm a front-end developer who likes building web apps that are a pleasure to use, the kind where the details quietly add up. I care about clean, accessible interfaces, fast load times, and code that the next person can actually read. Two or three sentences here about who you are and what you're looking for.</p>
-        <p class="blurb">Outside of work you'll usually find me somewhere between a good story and a long walk. Swap this line for something that's actually you.</p>
+      <div class="intro">
+        <p class="kicker">
+          Full-Stack Developer <span class="mt mono" id="mt">t+00:00</span>
+        </p>
+        <h1>I build web apps that pull people in.</h1>
+        <p class="lede">
+          Interfaces with real craft behind them: fast, accessible, and a little
+          more interesting than they had to be.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#work">See my work</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
       </div>
-      <aside class="skills" aria-label="Skills">
-        <p class="skills-label">Toolkit</p>
-        <ul class="chips">
-          <li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li>
-          <li>HTML</li><li>CSS</li><li>Tailwind</li><li>Node.js</li>
-          <li>Git</li><li>Figma</li><li>REST APIs</li><li>Accessibility</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
 
-  <section class="contact sec" id="contact" aria-labelledby="contact-h">
-    <p class="eyebrow">04 — Contact</p>
-    <h2 id="contact-h">Let's talk</h2>
-    <p class="sub">Open to front-end roles and the occasional interesting project. The fastest way to reach me is email.</p>
-    <div class="reach">
-      <a class="reach-card" href="mailto:you@example.com"><span class="reach-k">Email</span><span class="reach-v">you@example.com</span></a>
-      <a class="reach-card" href="https://github.com/yourhandle" target="_blank" rel="noopener"><span class="reach-k">GitHub</span><span class="reach-v">github.com/yourhandle</span></a>
-      <a class="reach-card" href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener"><span class="reach-k">LinkedIn</span><span class="reach-v">linkedin.com/in/yourhandle</span></a>
-    </div>
-  </section>
+      <div class="thread" aria-hidden="true"><span class="tick"></span></div>
+      <div class="morse" aria-hidden="true">
+        <i class="d"></i><i class="d"></i><i class="d"></i><i class="l"></i
+        ><i class="d"></i><i class="l"></i><i class="l"></i>
+        <small class="mono">S T A Y</small>
+      </div>
+    </header>
 
-  <footer class="site-foot">
-    <span class="foot-brand">Your Name</span>
-    <span>Placeholder name &amp; content · toggle the top-right totem</span>
-    <a class="back-top" href="#hero">Back to top ↑</a>
-  </footer>
-</main>
+    <main>
+      <section class="work sec" id="work" aria-labelledby="work-h">
+        <p class="eyebrow">01 — Work</p>
+        <h2 id="work-h">Selected work</h2>
+        <p class="sub">
+          Three things I've built
+        </p>
+        <div class="grid">
 
-<script src="js/main.js"></script>
-</body>
+           <div class="vol">
+            <img class="photo" src="images/guit-strum.png"></img>
+            <h3>GuitStrum</h3>
+            <p>
+              A real-time chord-recognition app streaming live mic audio to an
+              ML classifier over WebSockets, at 92% accuracy.
+            </p>
+            <div class="tags">
+              <span>Next.js</span><span>Python</span><span>FastAPI</span>
+            </div>
+            <div class="vol-links">
+              <a
+                href="https://gu-6216f5deb5754fe99797869c08258921.ecs.us-east-2.on.aws/play"
+                target="_blank"
+                rel="noopener"
+                >Live ↗</a
+              ><a
+                href="https://github.com/angelaayo/Guit-Strum"
+                target="_blank"
+                rel="noopener"
+                >Code ↗</a
+              >
+            </div>
+          </div>
+          <div class="vol">
+            <img class="photo" src="images/demo.gif"></img>
+            <h3>Beacon</h3>
+            <p>
+              A full-stack incident-response platform with org-level data
+              isolation, role-based access, and real-time collaborative notes.
+            </p>
+            <div class="tags">
+              <span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span>
+            </div>
+            <div class="vol-links">
+              <a
+                href="https://beacon-k2ba.onrender.com/"
+                target="_blank"
+                rel="noopener"
+                >Live ↗</a
+              ><a
+                href="https://github.com/angelaayo/Beacon"
+                target="_blank"
+                rel="noopener"
+                >Code ↗</a
+              >
+            </div>
+          </div>
+          <a
+            class="vol"
+            href="https://github.com/serdarbozan/MavMotors"
+            target="_blank"
+            rel="noopener"> 
+            <img class="photo" src="images/mav_motors1.png"></img>
+            <h3>MavMotors</h3>
+            <p>
+              An Android marketplace for browsing, buying, and moderating
+              vehicle listings, with a built-in loan-financing engine.
+            </p>
+            <div class="tags">
+              <span>Kotlin</span><span>Android SDK</span><span>Room</span>
+            </div></a
+          >
+        </div>
+      </section>
+
+      <section class="exp sec" id="experience" aria-labelledby="exp-h">
+        <p class="eyebrow">02 — Experience</p>
+        <h2 id="exp-h">Experience</h2>
+        <ol class="timeline">
+          <li class="exp-item">
+            <div class="exp-when">Mar 2026 — May 2026</div>
+            <div class="exp-body">
+              <h3 class="exp-role">Software Developer</h3>
+              <p class="exp-co">UTA Student Development Team · Arlington, TX</p>
+              <p class="exp-desc">
+                Built MavMotors' account and listings system on a 4-person
+                Kotlin Android team, covering browse, cart, checkout, and admin
+                moderation. Modeled a 6-entity Room database for persistent
+                accounts and order history, and built a financing engine that
+                calculates loan approval, APR, and monthly payments from an
+                applicant's credit score, income, and down payment.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="about sec" id="about" aria-labelledby="about-h">
+        <div class="about-grid">
+          <div class="about-copy">
+            <p class="eyebrow">03 — About</p>
+            <h2 id="about-h">A bit about me</h2>
+            <p class="blurb">
+              I'm a Computer Science student at UT Arlington (graduating Dec
+              2027, 3.9 GPA) who likes building full-stack web apps where the
+              details quietly add up, real-time collaboration, clean APIs, and
+              interfaces that are a pleasure to use. I care about accessible
+              front-ends, fast load times, and code the next person can actually
+              read.
+            </p>
+            <p class="blurb">
+              I'm looking for software engineering internships and new-grad
+              roles where I can keep shipping things people actually use.
+            </p>
+          </div>
+          <aside class="skills" aria-label="Skills">
+            <p class="skills-label">Toolkit</p>
+            <ul class="chips">
+              <li>Java</li>
+              <li>C++</li>
+              <li>C#</li>
+              <li>Python</li>
+              <li>Swift</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>SQL</li>
+              <li>HTML/CSS</li>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>FastAPI</li>
+              <li>Tailwind</li>
+              <li>TensorFlow</li>
+              <li>Pandas</li>
+              <li>PostgreSQL</li>
+              <li>Android SDK</li>
+              <li>Git</li>
+              <li>Docker</li>
+              <li>AWS</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="contact sec" id="contact" aria-labelledby="contact-h">
+        <p class="eyebrow">04 — Contact</p>
+        <h2 id="contact-h">Let's talk</h2>
+        <p class="sub">
+          Open to front-end roles and the occasional interesting project. The
+          fastest way to reach me is email.
+        </p>
+        <div class="reach">
+          <a class="reach-card" href="mailto:angelaayodeji@gmail.com"
+            ><span class="reach-k">Email</span
+            ><span class="reach-v">angelaayodeji@gmail.com</span></a
+          >
+          <a
+            class="reach-card"
+            href="https://github.com/angelaayo"
+            target="_blank"
+            rel="noopener"
+            ><span class="reach-k">GitHub</span
+            ><span class="reach-v">github.com/angelaayo</span></a
+          >
+          <a
+            class="reach-card"
+            href="https://linkedin.com/in/angela-ayodeji"
+            target="_blank"
+            rel="noopener"
+            ><span class="reach-k">LinkedIn</span
+            ><span class="reach-v">linkedin.com/in/angela-ayodeji</span></a
+          >
+        </div>
+      </section>
+
+      <footer class="site-foot">
+        <span class="foot-brand">Angela Ayodeji</span>
+        <span>toggle the top-right totem</span>
+        <a class="back-top" href="#hero">Back to top ↑</a>
+      </footer>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
 </html>
